@@ -1,1 +1,7 @@
-exportPattern("^[[:alpha:]]+")
+export(OC)
+export(OCIsop)
+export(singleSidedApproxPlan)
+export(singleSidedLRPlan)
+export(findOptPlan)
+export(quickApproxPlan)
+export(quickOCIsop)

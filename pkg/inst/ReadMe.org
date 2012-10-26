@@ -1,0 +1,18 @@
+* Notes on ExLiebeRes
+  This package implements all neccessary functions to generate and
+  regenerate the results of the upcoming paper "" by Krumbholz and
+  Steuer
+
+** Possible improvements
+*** Use  multiple cores if available
+*** Search over k can be optimized. It may happen now, that points 
+    are revisited
+
+*** resolution should be made configurable
+*** Add function to plot ISO-p lines and OCs
+
+** Needed Improvements for 1.0.0
+*** TODO Complete and improve man pages
+*** TODO Write small vignette
+*** Improve OC plots
+*** Krumbi fragen wg Reference für single sided plan / single sided approx plan

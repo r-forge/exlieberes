@@ -1,48 +1,48 @@
 \name{OC}
 \alias{OC}
-%- Also NEED an '\alias' for EACH other topic documented here.
-\title{ Die gesamt OC
-%%  ~~function to do ... ~~
+\title{
+Calculate the operation characteric (OC) of a plan
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+For both types of plans \"LR\" and \"BSK\" the OC for a given (fitting)
+pair of ( \code{mu}, \code{sigma}) is evaluated.
 }
 \usage{
-OC(mu, sigma, n, k)
+OC(mu, sigma, n, k, resolution = 100, type = "LR")
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{mu}{
-%%     ~~Describe \code{mu} here~~
+   \code{mu}, is a mu(sigma), i.e. must match with sigma, see reference.
 }
   \item{sigma}{
-%%     ~~Describe \code{sigma} here~~
+ \code{sigma}
 }
-  \item{n}{
-%%     ~~Describe \code{n} here~~
+  \item{n}{ samplesize
 }
-  \item{k}{
-%%     ~~Describe \code{k} here~~
+  \item{k}{ critical value
+}
+  \item{resolution}{
+defines the resolution for the internal numerical integrations
+}
+  \item{type}{
+must be \"LR\" oder \"BSK\".
 }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+\value{ real number, value of OC at that point.
 }
 \references{
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Detlef Steuer, steuer@hsu-hh.de, http://fawn.hsu-hh.de/~steuer
 }
 \note{
-%%  ~~further notes~~
+Keep in mind that not all combinations of parameters give
+results. Integration may easily fail, if \code{mu} and \code{sigma} do
+not fit. 
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
@@ -52,18 +52,8 @@ OC(mu, sigma, n, k)
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (mu, sigma, n, k) 
-{
-    part1 <- OC.1(mu, sigma, n, k)
-    part2 <- OC.2(mu, sigma, n, k)
-    part1 + 2 * part2
-  }
-}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+}
+\keyword{ ~htest }
+

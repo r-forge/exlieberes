@@ -1,11 +1,10 @@
 Package: ExLiebeRes
-Type: Package
-Title: Exact Liebermann-Reshnikov plans
-Version: 0.1
-Date: 2012-04-24
+Version: 0.9.0
+Date: 2012-10-26
+Title: Exact Liebermann/Reshnikov and Bruhn-Suhr/Krumbholz plans
 Author: Wolf Krumbholz and Detlef Steuer
 Maintainer: Detlef Steuer <steuer@hsu-hh.de>
-Description: An optimal LR-plan according to Bruhn-Suhr/Krumbholz 1992 is calculated
+Description: Functions are provided to calculate optimal Liebermann/Reshnikov plans according to Bruhn-Suhr/Krumbholz 1992 resp. Bruhn-Suhr/Krumbholz plans according to Bruhn-Suhr/Krumbholz 1990.
 License: GPL (>=2)
-URL: TODO
+URL: http://fawn.hsu-hh.de/~steuer
 BugReports: steuer@hsu-hh.de

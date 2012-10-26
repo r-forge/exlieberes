@@ -1,42 +1,55 @@
 \name{ExLiebeRes-package}
-\alias{ExLiebeRes-package}
 \alias{ExLiebeRes}
 \docType{package}
 \title{
-What the package does (short line)
-~~ package title ~~
+Caculating optimal variable sampling plans of type \"LR\" or \"BSK\".
 }
 \description{
-More about what it does (maybe more than one line)
-~~ A concise (1-5 lines) description of the package ~~
+For both types of plans the OC is implemented. Using a four step
+approximation generating intermediate plans the final optimal plan are
+determined quickly. Details can be found in the reference resp. an
+upcoming paper by the package author and Prof. Dr. Krumbholz. 
 }
 \details{
 \tabular{ll}{
 Package: \tab ExLiebeRes\cr
 Type: \tab Package\cr
 Version: \tab 1.0\cr
-Date: \tab 2012-02-22\cr
-License: \tab What license is it under?\cr
+Date: \tab 2012-10-22\cr
+License: \tab GPL >= 2\cr
 }
-~~ An overview of how to use the package, including the most important ~~
-~~ functions ~~
+
+For an user the function \code{findOptPlan} is the main interface. For
+any usable set of parameters p1, p2, alpha, beta the optimal variable
+samplnig plan either
+of type Lieberman/Reshnikov (\"LR\") or Bruhn-Suhr/Krumbholz (\"BSK\") 
+is determinded.
+
+For researchers the underlying OC function and intermediate plans may
+also be evaluated directly.
+
+Not all possible combinations of parameters give numerically usable
+results. The underlying integrals become hard to evaluate if the sample
+size gets big (n >= ca 750) or the difference between p1 and p2 very
+small. Normally the internal \code{integrate} function just bails out in
+these cases.
+
+
 }
 \author{
-Who wrote it
-
-Maintainer: Who to complain to <yourfault@somewhere.net>
-~~ The author and/or maintainer of the package ~~
+  The paper accompanies a paper written by Wolf Krumbholz and Detlef
+  Steuer (to appear)
+  
+Maintainer: steuer@hsu-hh.de
 }
 \references{
-~~ Literature or other references for background information ~~
+paper to appear
 }
-~~ Optionally other standard keywords, one per line, from file KEYWORDS in ~~
-~~ the R documentation directory ~~
+
 \keyword{ package }
 \seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
+
 }
 \examples{
-~~ simple examples of the most important functions ~~
+findOptPlan(0.01, 0.06, 0.1, 0.1)
 }
