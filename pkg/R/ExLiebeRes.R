@@ -100,7 +100,7 @@ findOptPlan <- function( p1, p2, alpha, beta, type="LR", use.quickApproxPlan=TRU
   }
 
 if (is.null(given.plan)) {
-  startplan <- singleSideLRPlan(p1, p2, alpha, beta, verbosity.level=verbosity.level)
+  startplan <- singleSidedLRPlan(p1, p2, alpha, beta, verbosity.level=verbosity.level)
   nmin <- startplan$ntilde
   if (type == "LR") kopt <- startplan$ktilde
   if (type == "BSK") kopt <- pnorm(startplan$ltilde/sqrt(startplan$ntilde))
