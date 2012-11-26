@@ -26,9 +26,9 @@ OCIsop <- function( p, n, k, resolution=100, type="LR"){
 
 singleSidedApproxPlan <- function(p1, p2, alpha, beta, verbosity.level=0)
   {
-### Einseitiger Näherungsplan; ist eine gute Approximation für
+### Einseitiger Naeherungsplan; ist eine gute Approximation für
 ### einen Startplan, um nach BSK oder LR zu suchen
-### Es wird das minimale n zurückgegeben, für das eine Lösung exisitert.
+### Es wird das minimale n zurückgegeben, für das eine Loesung exisitert.
 
     n1 <- ceiling(((qnorm(1-alpha) - qnorm(beta)) / (qnorm(p2)-qnorm(p1)) )^2 )
     l1n <- qnorm(1-alpha) + sqrt(n1)*qnorm(p1)
@@ -67,13 +67,13 @@ singleSidedLRPlan <- function(p1, p2, alpha, beta, verbosity.level=0)
           plan <- list(ntilde=nmin, ltilde=lopt, ktilde=pbeta(0.5 + lopt/(2*nmin -2), (nmin-2)/2, (nmin-2)/2 ))
         }
       else if ( !(result1 >= 1-alpha ) & !(result2 < beta) )
-        {### Es gibt keine Lösung
+        {### Es gibt keine Loesung
           nmin <- nmin+1
           direction<-"unknown"
           if (verbosity.level >= 2) cat("increase n now: ", nmin, "\n")
         }
       else
-        { ### es muss am k gerüttelt werden.
+        { ### es muss am k geruettelt werden.
           if (result1 < 1-alpha) {
             if (direction == "unknown") direction <- "up"
             if (direction == "up") lopt <- lopt + ldiff else {
@@ -128,12 +128,12 @@ while(! PlanGefunden){
     PlanGefunden <- TRUE
     plan <- list(ntilde=nmin, ltilde=NA, ktilde=kopt)
   }
-  else if ( !(Lminp1 >= 1-alpha ) & !(Lmaxp2 < beta) ) { ### Es gibt keine Lösung
+  else if ( !(Lminp1 >= 1-alpha ) & !(Lmaxp2 < beta) ) { ### Es gibt keine Loesung
     nmin <- nmin+1
     direction<-"unknown"
-    if (verbosity.level >= 2) cat("nächstes n: ", nmin, "\n")
+    if (verbosity.level >= 2) cat("naechstes n: ", nmin, "\n")
   }
-  else { ### es muss am k gerüttelt werden.
+  else { ### es muss am k geruettelt werden.
     if (Lminp1 < 1-alpha) {
       if (direction == "unknown") direction <- "up"
       if (direction == "up") kopt <- kopt + kdiff else {
@@ -179,13 +179,13 @@ quickApproxPlan <- function( p1, p2, alpha, beta, type="LR", verbosity.level=0){
         plan <- list(ntilde=nmin, ltilde=NA, ktilde=kopt)
       }
     else if ( !(Lminp1 >= 1-alpha ) & !(Lmaxp2 < beta) )
-      {### Es gibt keine Lösung
+      {### Es gibt keine Loesung
         nmin <- nmin+1
         direction<-"unknown"
         if (verbosity.level >= 2) cat("increase n now: ", nmin, "\n")
       }
     else
-      { ### es muss am k gerüttelt werden.
+      { ### es muss am k geruettelt werden.
         if (Lminp1 < 1-alpha) {
           if (direction == "unknown") direction <- "up"
           if (direction == "up") kopt <- kopt + kdiff else {

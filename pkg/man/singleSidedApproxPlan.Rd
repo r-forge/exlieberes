@@ -56,5 +56,5 @@ Detlef Steuer, steuer@hsu-hh.de, http://fawn.hsu-hh.de/~steuer
 \examples{
 singleSidedApproxPlan(0.01, 0.06, 0.1, 0.1)
 }
-\keyword{ ~htest }
+\keyword{ htest }
 
